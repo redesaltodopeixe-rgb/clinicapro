@@ -777,8 +777,7 @@ async function salvarPaciente() {
     const indicador = pacientes.find(p => p.id === indicadorId);
     if (indicador) {
       const novaObs = (indicador.observacoes || '') +
-        (indicador.observacoes ? '
-' : '') +
+        (indicador.observacoes ? '\n' : '') +
         `[Indicação] Indicou ${nome} em ${new Date().toLocaleDateString('pt-BR')}`;
       await db.from('pacientes').update({ observacoes: novaObs }).eq('id', indicadorId);
       indicador.observacoes = novaObs;
