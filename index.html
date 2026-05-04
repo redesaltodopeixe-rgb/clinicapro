@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -356,15 +357,80 @@
 <div id="form-pac-overlay">
   <div class="pac-sheet">
     <div class="sheet-title">Novo paciente <span class="sh-close" onclick="fecharFormPac()">×</span></div>
+
+    <div style="font-size:10px;font-weight:700;color:var(--azul);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;padding:6px 10px;background:var(--azul-cl);border-radius:6px">👤 Identificação</div>
     <div class="frow">
-      <div class="fg"><label class="fl2">Nome completo</label><input class="fi2" id="np-nome" placeholder="Nome"/></div>
-      <div class="fg"><label class="fl2">Como é chamado</label><input class="fi2" id="np-apelido" placeholder="Apelido"/></div>
+      <div class="fg"><label class="fl2">Nome completo *</label><input class="fi2" id="np-nome" placeholder="Nome completo"/></div>
+      <div class="fg"><label class="fl2">Como é chamado *</label><input class="fi2" id="np-apelido" placeholder="Apelido"/></div>
     </div>
-    <div class="fg"><label class="fl2">WhatsApp (com DDD)</label><input class="fi2" id="np-wa" type="tel" placeholder="(31) 9 9999-9999"/></div>
+    <div class="frow">
+      <div class="fg"><label class="fl2">WhatsApp (com DDD) *</label><input class="fi2" id="np-wa" type="tel" placeholder="(31) 9 9999-9999"/></div>
+      <div class="fg"><label class="fl2">Data de nascimento</label><input class="fi2" id="np-nasc" type="date"/></div>
+    </div>
     <div class="frow">
       <div class="fg">
-        <label class="fl2">Tipo de atendimento</label>
-        <select class="fi2" id="np-tipo">
+        <label class="fl2">Sexo</label>
+        <select class="fi2" id="np-sexo">
+          <option value="">Selecionar</option>
+          <option>Masculino</option>
+          <option>Feminino</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label class="fl2">Estado civil</label>
+        <select class="fi2" id="np-civil">
+          <option value="">Selecionar</option>
+          <option>Solteiro(a)</option>
+          <option>Casado(a)</option>
+          <option>Divorciado(a)</option>
+          <option>Viúvo(a)</option>
+          <option>União estável</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow">
+      <div class="fg"><label class="fl2">Profissão</label><input class="fi2" id="np-profissao" placeholder="Ex: professor, engenheiro..."/></div>
+      <div class="fg">
+        <label class="fl2">Ocupação principal</label>
+        <select class="fi2" id="np-ocupacao">
+          <option value="">Selecionar</option>
+          <option>Sedentário</option>
+          <option>Em pé</option>
+          <option>Esforço físico</option>
+          <option>Home office</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow">
+      <div class="fg"><label class="fl2">CPF</label><input class="fi2" id="np-cpf" placeholder="000.000.000-00"/></div>
+      <div class="fg"><label class="fl2">E-mail</label><input class="fi2" id="np-email" type="email" placeholder="email@exemplo.com"/></div>
+    </div>
+
+    <div style="font-size:10px;font-weight:700;color:var(--verde);text-transform:uppercase;letter-spacing:.06em;margin:14px 0 10px;padding:6px 10px;background:var(--verde-cl);border-radius:6px">📣 Como chegou ao consultório</div>
+    <div class="fg">
+      <label class="fl2">Canal de chegada *</label>
+      <select class="fi2" id="np-origem" onchange="toggleIndicacao()">
+        <option value="Instagram">Instagram</option>
+        <option value="Google">Google</option>
+        <option value="Indicação de paciente">Indicação de paciente</option>
+        <option value="Indicação médica">Indicação médica</option>
+        <option value="Outros">Outros</option>
+      </select>
+    </div>
+    <div class="fg" id="campo-indicador" style="display:none">
+      <label class="fl2">Quem indicou? *</label>
+      <select class="fi2" id="np-indicador">
+        <option value="">Selecionar paciente que indicou...</option>
+      </select>
+      <div style="font-size:10px;color:var(--verde);margin-top:4px">✓ Desconto aplicado — valor avulso muda para R$185</div>
+    </div>
+
+    <div style="font-size:10px;font-weight:700;color:#534AB7;text-transform:uppercase;letter-spacing:.06em;margin:14px 0 10px;padding:6px 10px;background:#EEEDFE;border-radius:6px">💰 Financeiro</div>
+    <div class="frow">
+      <div class="fg">
+        <label class="fl2">Tipo de atendimento *</label>
+        <select class="fi2" id="np-tipo" onchange="atualizarValor()">
           <option value="avulso">Avulso — R$ 200</option>
           <option value="indicacao">Avulso indicação — R$ 185</option>
           <option value="plano_avista">Plano à vista — R$ 165/sessão</option>
@@ -372,10 +438,24 @@
           <option value="especial">Condição especial</option>
         </select>
       </div>
-      <div class="fg"><label class="fl2">Valor/sessão (R$)</label><input class="fi2" id="np-valor" type="number" placeholder="165"/></div>
+      <div class="fg"><label class="fl2">Valor/sessão (R$) *</label><input class="fi2" id="np-valor" type="number" placeholder="165"/></div>
     </div>
+    <div class="frow">
+      <div class="fg">
+        <label class="fl2">Forma de pagamento</label>
+        <select class="fi2" id="np-pagamento">
+          <option>PIX</option>
+          <option>Dinheiro</option>
+          <option>Cartão débito</option>
+          <option>Cartão crédito</option>
+        </select>
+      </div>
+      <div class="fg"><label class="fl2">Convênio</label><input class="fi2" id="np-convenio" placeholder="Particular (padrão)"/></div>
+    </div>
+
+    <div style="font-size:10px;font-weight:700;color:#791F1F;text-transform:uppercase;letter-spacing:.06em;margin:14px 0 10px;padding:6px 10px;background:#fdeaea;border-radius:6px">🩺 Dados clínicos iniciais</div>
     <div class="fg">
-      <label class="fl2">Especialidade</label>
+      <label class="fl2">Especialidade *</label>
       <select class="fi2" id="np-esp">
         <option>Terapia Manual</option>
         <option>Osteopatia</option>
@@ -384,18 +464,10 @@
       </select>
     </div>
     <div class="fg"><label class="fl2">Queixa principal</label><input class="fi2" id="np-queixa" placeholder="Ex: lombalgia, cervicalgia, pós-op..."/></div>
-    <div class="fg"><label class="fl2">Data de nascimento</label><input class="fi2" id="np-nasc" type="date"/></div>
-    <div class="fg">
-      <label class="fl2">Como chegou ao consultório</label>
-      <select class="fi2" id="np-origem">
-        <option>Indicação de paciente</option>
-        <option>Instagram</option>
-        <option>Google</option>
-        <option>Indicação médica</option>
-        <option>Outros</option>
-      </select>
-    </div>
-    <button class="btn pr" style="width:100%;padding:12px;font-size:13px;border-radius:var(--r-sm);margin-top:4px" onclick="salvarPaciente()">Cadastrar paciente</button>
+    <div class="fg"><label class="fl2">Médico que encaminhou</label><input class="fi2" id="np-medico" placeholder="Nome do médico ou especialista"/></div>
+    <div class="fg"><label class="fl2">Observações iniciais</label><textarea class="fi2" id="np-obs" rows="2" placeholder="Informações relevantes para o primeiro atendimento..." style="resize:none"></textarea></div>
+
+    <button class="btn pr" style="width:100%;padding:13px;font-size:13px;border-radius:var(--r-sm);margin-top:8px" onclick="salvarPaciente()">Cadastrar paciente</button>
   </div>
 </div>
 
@@ -556,6 +628,8 @@ function renderPacientes(filtro = '') {
         <div class="btn-row" style="margin-top:8px">
           <button class="btn vd" onclick="salvarEvo(event,${p.id})">Salvar anotação</button>
           <button class="btn pr" onclick="gerarMsgPac(event,${p.id},'${p.apelido || p.nome.split(' ')[0]}')">Gerar msg WA</button>
+          <button class="btn" onclick="editarPaciente(event,'${p.id}')" style="border-color:var(--azul);color:var(--azul)">✏️ Editar</button>
+          <button class="btn vm" onclick="deletarPaciente(event,'${p.id}','${p.nome}')">🗑️ Excluir</button>
         </div>
         <div class="msg-box" id="msgpac-${p.id}">
           <div class="msg-top">
@@ -613,14 +687,49 @@ function gerarMsgPac(e, id, apelido) {
 }
 
 // ── FORM PACIENTE ─────────────────────────────────────────────────────
-document.getElementById('np-tipo').addEventListener('change', function() {
+function atualizarValor() {
   const valores = { avulso: 200, indicacao: 185, plano_avista: 165, plano_prazo: 185, especial: '' };
-  document.getElementById('np-valor').value = valores[this.value] || '';
-});
+  const tipo = document.getElementById('np-tipo').value;
+  document.getElementById('np-valor').value = valores[tipo] || '';
+}
+
+function toggleIndicacao() {
+  const origem = document.getElementById('np-origem').value;
+  const campo = document.getElementById('campo-indicador');
+  const tipoSelect = document.getElementById('np-tipo');
+  if (origem === 'Indicação de paciente') {
+    campo.style.display = 'block';
+    // Popula lista de pacientes indicadores
+    const sel = document.getElementById('np-indicador');
+    sel.innerHTML = '<option value="">Selecionar paciente que indicou...</option>' +
+      pacientes.map(p => `<option value="${p.id}">${p.nome}${p.apelido ? ' (' + p.apelido + ')' : ''}</option>`).join('');
+    // Muda tipo para indicação automaticamente
+    tipoSelect.value = 'indicacao';
+    atualizarValor();
+  } else {
+    campo.style.display = 'none';
+    if (tipoSelect.value === 'indicacao') {
+      tipoSelect.value = 'avulso';
+      atualizarValor();
+    }
+  }
+}
 
 function abrirFormPac() {
+  // Limpa o formulário
+  ['np-nome','np-apelido','np-wa','np-cpf','np-email','np-profissao','np-queixa','np-medico','np-obs','np-convenio'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  ['np-nasc'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+  ['np-sexo','np-civil','np-ocupacao'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+  document.getElementById('np-origem').value = 'Instagram';
+  document.getElementById('np-tipo').value = 'avulso';
+  document.getElementById('np-valor').value = '200';
+  document.getElementById('campo-indicador').style.display = 'none';
   document.getElementById('form-pac-overlay').classList.add('open');
 }
+
 function fecharFormPac() {
   document.getElementById('form-pac-overlay').classList.remove('open');
 }
@@ -634,19 +743,58 @@ async function salvarPaciente() {
   const queixa = document.getElementById('np-queixa').value.trim();
   const nasc = document.getElementById('np-nasc').value;
   const origem = document.getElementById('np-origem').value;
+  const indicadorId = document.getElementById('np-indicador')?.value || null;
+  const sexo = document.getElementById('np-sexo').value;
+  const civil = document.getElementById('np-civil').value;
+  const profissao = document.getElementById('np-profissao').value.trim();
+  const ocupacao = document.getElementById('np-ocupacao').value;
+  const cpf = document.getElementById('np-cpf').value.trim();
+  const email = document.getElementById('np-email').value.trim();
+  const medico = document.getElementById('np-medico').value.trim();
+  const obs = document.getElementById('np-obs').value.trim();
+  const pagamento = document.getElementById('np-pagamento').value;
+  const convenio = document.getElementById('np-convenio').value.trim();
+  const tipo = document.getElementById('np-tipo').value;
+
   if (!nome) { toast('Informe o nome do paciente'); return; }
+  if (origem === 'Indicação de paciente' && !indicadorId) {
+    toast('Selecione o paciente que indicou'); return;
+  }
+
   const { data, error } = await db.from('pacientes').insert([{
     nome, apelido, whatsapp: wa, valor_sessao: valor,
     especialidade: esp, queixa, data_nascimento: nasc || null,
-    como_chegou: origem, evolucao: ''
+    como_chegou: origem, indicado_por: indicadorId || null,
+    sexo, estado_civil: civil, profissao, ocupacao,
+    cpf, email, medico_responsavel: medico,
+    observacoes: obs, forma_pagamento: pagamento,
+    tipo_atendimento: tipo, evolucao: ''
   }]).select().single();
+
   if (error) { toast('Erro ao cadastrar: ' + error.message); return; }
+
+  // Se foi indicação, registra na ficha do indicador
+  if (indicadorId && data) {
+    const indicador = pacientes.find(p => p.id === indicadorId);
+    if (indicador) {
+      const novaObs = (indicador.observacoes || '') +
+        (indicador.observacoes ? '
+' : '') +
+        `[Indicação] Indicou ${nome} em ${new Date().toLocaleDateString('pt-BR')}`;
+      await db.from('pacientes').update({ observacoes: novaObs }).eq('id', indicadorId);
+      indicador.observacoes = novaObs;
+    }
+  }
+
   pacientes.push(data);
   pacientes.sort((a, b) => a.nome.localeCompare(b.nome));
   atualizarDatalist();
   fecharFormPac();
   renderPacientes();
-  toast(nome + ' cadastrado!');
+  const msg = indicadorId
+    ? `${nome} cadastrado! Indicação de ${pacientes.find(p=>p.id===indicadorId)?.nome} registrada ✓`
+    : `${nome} cadastrado!`;
+  toast(msg);
 }
 
 // ── SESSÕES ───────────────────────────────────────────────────────────
@@ -930,6 +1078,102 @@ function renderMensagens() {
 function toggleMsgLembrete(id) {
   const box = document.getElementById(id);
   if (box) box.classList.toggle('vis');
+}
+
+// ── EDITAR / DELETAR PACIENTE ────────────────────────────────────────
+function editarPaciente(e, id) {
+  e.stopPropagation();
+  const p = pacientes.find(p => p.id === id);
+  if (!p) return;
+
+  // Remove modal anterior se existir
+  const anterior = document.getElementById('modal-editar');
+  if (anterior) anterior.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'modal-editar';
+  modal.className = 'overlay open';
+  modal.innerHTML = `
+    <div class="sheet">
+      <div class="sheet-title">Editar paciente <span class="sh-close" onclick="fecharModalEditar()">×</span></div>
+      <div class="fg"><label class="fl2">Nome completo</label><input class="fi2" id="ep-nome" value="${p.nome || ''}"/></div>
+      <div class="frow">
+        <div class="fg"><label class="fl2">Como é chamado</label><input class="fi2" id="ep-apelido" value="${p.apelido || ''}"/></div>
+        <div class="fg"><label class="fl2">WhatsApp</label><input class="fi2" id="ep-wa" value="${p.whatsapp || ''}"/></div>
+      </div>
+      <div class="frow">
+        <div class="fg">
+          <label class="fl2">Especialidade</label>
+          <select class="fi2" id="ep-esp">
+            <option ${p.especialidade==='Terapia Manual'?'selected':''}>Terapia Manual</option>
+            <option ${p.especialidade==='Osteopatia'?'selected':''}>Osteopatia</option>
+            <option ${p.especialidade==='Fisioterapia'?'selected':''}>Fisioterapia</option>
+            <option ${p.especialidade==='Avaliação Inicial'?'selected':''}>Avaliação Inicial</option>
+          </select>
+        </div>
+        <div class="fg"><label class="fl2">Valor/sessão (R$)</label><input class="fi2" id="ep-valor" type="number" value="${p.valor_sessao || 165}"/></div>
+      </div>
+      <div class="fg"><label class="fl2">Queixa principal</label><input class="fi2" id="ep-queixa" value="${p.queixa || ''}"/></div>
+      <div class="frow">
+        <div class="fg">
+          <label class="fl2">Como chegou</label>
+          <select class="fi2" id="ep-origem">
+            <option ${p.como_chegou==='Indicação de paciente'?'selected':''}>Indicação de paciente</option>
+            <option ${p.como_chegou==='Instagram'?'selected':''}>Instagram</option>
+            <option ${p.como_chegou==='Google'?'selected':''}>Google</option>
+            <option ${p.como_chegou==='Indicação médica'?'selected':''}>Indicação médica</option>
+            <option ${p.como_chegou==='Outros'?'selected':''}>Outros</option>
+          </select>
+        </div>
+        <div class="fg"><label class="fl2">Data de nascimento</label><input class="fi2" id="ep-nasc" type="date" value="${p.data_nascimento || ''}"/></div>
+      </div>
+      <button class="btn pr" style="width:100%;padding:12px;font-size:13px;border-radius:var(--r-sm)" onclick="salvarEdicao('${id}')">Salvar alterações</button>
+    </div>`;
+  document.body.appendChild(modal);
+}
+
+function fecharModalEditar() {
+  const modal = document.getElementById('modal-editar');
+  if (modal) modal.remove();
+}
+
+async function salvarEdicao(id) {
+  const nome = document.getElementById('ep-nome').value.trim();
+  const apelido = document.getElementById('ep-apelido').value.trim();
+  const wa = document.getElementById('ep-wa').value.trim();
+  const esp = document.getElementById('ep-esp').value;
+  const valor = parseInt(document.getElementById('ep-valor').value) || 165;
+  const queixa = document.getElementById('ep-queixa').value.trim();
+  const origem = document.getElementById('ep-origem').value;
+  const nasc = document.getElementById('ep-nasc').value;
+  if (!nome) { toast('Informe o nome'); return; }
+  const { error } = await db.from('pacientes').update({
+    nome, apelido, whatsapp: wa,
+    especialidade: esp, valor_sessao: valor,
+    queixa, como_chegou: origem,
+    data_nascimento: nasc || null
+  }).eq('id', id);
+  if (error) { toast('Erro ao salvar: ' + error.message); return; }
+  const idx = pacientes.findIndex(p => p.id === id);
+  if (idx !== -1) {
+    pacientes[idx] = { ...pacientes[idx], nome, apelido, whatsapp: wa, especialidade: esp, valor_sessao: valor, queixa, como_chegou: origem, data_nascimento: nasc || null };
+  }
+  pacientes.sort((a, b) => a.nome.localeCompare(b.nome));
+  atualizarDatalist();
+  fecharModalEditar();
+  renderPacientes();
+  toast(nome + ' atualizado!');
+}
+
+async function deletarPaciente(e, id, nome) {
+  e.stopPropagation();
+  if (!confirm(`Excluir o paciente "${nome}"? Esta ação não pode ser desfeita.`)) return;
+  const { error } = await db.from('pacientes').delete().eq('id', id);
+  if (error) { toast('Erro ao excluir: ' + error.message); return; }
+  pacientes = pacientes.filter(p => p.id !== id);
+  atualizarDatalist();
+  renderPacientes();
+  toast(nome + ' excluído.');
 }
 
 // ── FORM NOVA SESSÃO ──────────────────────────────────────────────────
