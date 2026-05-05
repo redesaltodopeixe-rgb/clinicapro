@@ -6,7 +6,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
   <meta name="apple-mobile-web-app-title" content="ClinicaPro"/>
-  <title>ClinicaPro — Dr. Jadismar</title>
+  <title>ClinicaPro â€” Dr. Jadismar</title>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
     :root {
@@ -58,7 +58,7 @@
     .sec-label { font-size: 10px; font-weight: 700; color: var(--texto3); text-transform: uppercase; letter-spacing: .07em; margin: 14px 0 7px; }
     .sec-label:first-child { margin-top: 0; }
 
-    /* MÉTRICAS */
+    /* MÃ‰TRICAS */
     .metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 14px; }
     .metric { background: var(--branco); border-radius: var(--r-sm); padding: 12px 10px; border: 0.5px solid var(--cinza-2); text-align: center; }
     .metric-val { font-size: 20px; font-weight: 700; color: var(--texto); }
@@ -79,7 +79,7 @@
     .dia-pill.ativo .dp-nome, .dia-pill.ativo .dp-num { color: white; }
     .dia-pill.ativo .dp-dot { background: rgba(255,255,255,.6); }
 
-    /* SESSÃO CARD */
+    /* SESSÃƒO CARD */
     .sessao { background: var(--branco); border-radius: var(--r); padding: 12px 14px; margin-bottom: 8px; border: 0.5px solid var(--cinza-2); cursor: pointer; transition: border-color .15s; position: relative; }
     .sessao:hover { border-color: var(--cinza-3); }
     .sessao.confirmada { border-left: 3px solid var(--verde); padding-left: 11px; }
@@ -151,7 +151,7 @@
     .fin-container { background: var(--branco); border-radius: var(--r); border: 0.5px solid var(--cinza-2); overflow: hidden; }
     .fin-container-inner { padding: 4px 14px; }
 
-    /* FORM NOVA SESSÃO */
+    /* FORM NOVA SESSÃƒO */
     .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 50; display: none; align-items: flex-end; justify-content: center; }
     .overlay.open { display: flex; }
     .sheet { background: var(--branco); border-radius: 20px 20px 0 0; padding: 20px; width: 100%; max-width: 480px; max-height: 90vh; overflow-y: auto; }
@@ -194,7 +194,7 @@
     #form-pac-overlay.open { display: flex; }
     .pac-sheet { background: var(--branco); border-radius: 20px; padding: 20px; width: 100%; max-width: 480px; margin: auto; }
 
-    /* NOTA CLÍNICA */
+    /* NOTA CLÃNICA */
     .nota-sessao { background: var(--branco); border-radius: var(--r); padding: 14px; margin-bottom: 8px; border: 0.5px solid var(--cinza-2); }
     .nota-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
     .nota-data { font-size: 11px; color: var(--texto3); }
@@ -217,7 +217,7 @@
         <svg viewBox="0 0 24 24"><path d="M12 2a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9S3 15.97 3 11a9 9 0 0 1 9-9z"/><path d="M12 8v4l2 2"/></svg>
       </div>
       <h1>ClinicaPro</h1>
-      <p>Consultório Dr. Jadismar</p>
+      <p>ConsultÃ³rio Dr. Jadismar</p>
     </div>
     <div class="fg">
       <label class="fl">E-mail</label>
@@ -225,7 +225,7 @@
     </div>
     <div class="fg">
       <label class="fl">Senha</label>
-      <input class="fi" id="login-senha" type="password" placeholder="••••••••" autocomplete="current-password"/>
+      <input class="fi" id="login-senha" type="password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" autocomplete="current-password"/>
     </div>
     <button class="btn-login" onclick="fazerLogin()">Entrar</button>
     <div class="login-error" id="login-error"></div>
@@ -242,7 +242,7 @@
   <div class="header">
     <div class="header-top">
       <div>
-        <div class="greet">Olá, <strong id="saud-nome">Dr. Jadismar</strong></div>
+        <div class="greet">OlÃ¡, <strong id="saud-nome">Dr. Jadismar</strong></div>
         <div style="font-size:11px;color:var(--texto3);margin-top:1px" id="saud-data">Carregando...</div>
       </div>
       <div class="avatar" id="avatar-btn" title="Sair">JD</div>
@@ -260,9 +260,9 @@
     <!-- AGENDA -->
     <div class="sec ativo" id="s-agenda">
       <div class="metrics" id="metrics-agenda">
-        <div class="metric"><div class="metric-val" id="m-hoje">—</div><div class="metric-label">sessões hoje</div></div>
-        <div class="metric"><div class="metric-val verde" id="m-presenca">—</div><div class="metric-label">taxa presença</div></div>
-        <div class="metric"><div class="metric-val amber" id="m-pendentes">—</div><div class="metric-label">a confirmar</div></div>
+        <div class="metric"><div class="metric-val" id="m-hoje">â€”</div><div class="metric-label">sessÃµes hoje</div></div>
+        <div class="metric"><div class="metric-val verde" id="m-presenca">â€”</div><div class="metric-label">taxa presenÃ§a</div></div>
+        <div class="metric"><div class="metric-val amber" id="m-pendentes">â€”</div><div class="metric-label">a confirmar</div></div>
       </div>
       <div class="semana" id="semana"></div>
       <div id="agenda-corpo"><div class="loading"><div class="spinner"></div>Carregando agenda...</div></div>
@@ -277,12 +277,12 @@
     <!-- FINANCEIRO -->
     <div class="sec" id="s-financeiro">
       <div class="fin-grid" id="fin-resumo">
-        <div class="fin-card"><div class="fin-val verde" id="f-recebido">R$—</div><div class="fin-lbl">Recebido este mês</div></div>
-        <div class="fin-card"><div class="fin-val amber" id="f-pendente">R$—</div><div class="fin-lbl">A receber</div></div>
-        <div class="fin-card"><div class="fin-val vermelho" id="f-cancelado">R$—</div><div class="fin-lbl">Perdido (cancelamentos)</div></div>
-        <div class="fin-card"><div class="fin-val" id="f-semana">R$—</div><div class="fin-lbl">Esta semana</div></div>
+        <div class="fin-card"><div class="fin-val verde" id="f-recebido">R$â€”</div><div class="fin-lbl">Recebido este mÃªs</div></div>
+        <div class="fin-card"><div class="fin-val amber" id="f-pendente">R$â€”</div><div class="fin-lbl">A receber</div></div>
+        <div class="fin-card"><div class="fin-val vermelho" id="f-cancelado">R$â€”</div><div class="fin-lbl">Perdido (cancelamentos)</div></div>
+        <div class="fin-card"><div class="fin-val" id="f-semana">R$â€”</div><div class="fin-lbl">Esta semana</div></div>
       </div>
-      <div class="sec-label">Sessões do dia</div>
+      <div class="sec-label">SessÃµes do dia</div>
       <div class="fin-container"><div class="fin-container-inner" id="fin-lista"></div></div>
     </div>
 
@@ -320,10 +320,10 @@
   </div>
 </div>
 
-<!-- OVERLAY NOVA SESSÃO -->
+<!-- OVERLAY NOVA SESSÃƒO -->
 <div class="overlay" id="overlay-sessao">
   <div class="sheet">
-    <div class="sheet-title">Nova sessão <span class="sh-close" onclick="fecharFormSessao()">×</span></div>
+    <div class="sheet-title">Nova sessÃ£o <span class="sh-close" onclick="fecharFormSessao()">Ã—</span></div>
     <div class="fg">
       <label class="fl2">Paciente</label>
       <input class="fi2" id="f-pac" placeholder="Nome ou apelido" list="dl-pac" autocomplete="off"/>
@@ -331,7 +331,7 @@
     </div>
     <div class="frow">
       <div class="fg"><label class="fl2">Data</label><input class="fi2" id="f-data" type="date"/></div>
-      <div class="fg"><label class="fl2">Horário</label><input class="fi2" id="f-hora" type="time"/></div>
+      <div class="fg"><label class="fl2">HorÃ¡rio</label><input class="fi2" id="f-hora" type="time"/></div>
     </div>
     <div class="frow">
       <div class="fg">
@@ -339,7 +339,7 @@
         <select class="fi2" id="f-tipo">
           <option>Terapia Manual</option>
           <option>Osteopatia</option>
-          <option>Avaliação Inicial</option>
+          <option>AvaliaÃ§Ã£o Inicial</option>
           <option>Fisioterapia</option>
           <option>Retorno</option>
           <option>Domiciliar</option>
@@ -347,20 +347,20 @@
       </div>
       <div class="fg"><label class="fl2">Valor (R$)</label><input class="fi2" id="f-valor" type="number" placeholder="165"/></div>
     </div>
-    <div class="fg"><label class="fl2">Observação</label><input class="fi2" id="f-obs" placeholder="Queixa, orientações..."/></div>
-    <button class="btn pr" style="width:100%;padding:12px;font-size:13px;border-radius:var(--r-sm)" onclick="salvarSessao()">Salvar sessão</button>
+    <div class="fg"><label class="fl2">ObservaÃ§Ã£o</label><input class="fi2" id="f-obs" placeholder="Queixa, orientaÃ§Ãµes..."/></div>
+    <button class="btn pr" style="width:100%;padding:12px;font-size:13px;border-radius:var(--r-sm)" onclick="salvarSessao()">Salvar sessÃ£o</button>
   </div>
 </div>
 
 <!-- OVERLAY NOVO PACIENTE -->
 <div id="form-pac-overlay">
   <div class="pac-sheet">
-    <div class="sheet-title">Novo paciente <span class="sh-close" onclick="fecharFormPac()">×</span></div>
+    <div class="sheet-title">Novo paciente <span class="sh-close" onclick="fecharFormPac()">Ã—</span></div>
 
-    <div style="font-size:10px;font-weight:700;color:var(--azul);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;padding:6px 10px;background:var(--azul-cl);border-radius:6px">👤 Identificação</div>
+    <div style="font-size:10px;font-weight:700;color:var(--azul);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;padding:6px 10px;background:var(--azul-cl);border-radius:6px">ðŸ‘¤ IdentificaÃ§Ã£o</div>
     <div class="frow">
       <div class="fg"><label class="fl2">Nome completo *</label><input class="fi2" id="np-nome" placeholder="Nome completo"/></div>
-      <div class="fg"><label class="fl2">Como é chamado *</label><input class="fi2" id="np-apelido" placeholder="Apelido"/></div>
+      <div class="fg"><label class="fl2">Como Ã© chamado *</label><input class="fi2" id="np-apelido" placeholder="Apelido"/></div>
     </div>
     <div class="frow">
       <div class="fg"><label class="fl2">WhatsApp (com DDD) *</label><input class="fi2" id="np-wa" type="tel" placeholder="(31) 9 9999-9999"/></div>
@@ -383,20 +383,20 @@
           <option>Solteiro(a)</option>
           <option>Casado(a)</option>
           <option>Divorciado(a)</option>
-          <option>Viúvo(a)</option>
-          <option>União estável</option>
+          <option>ViÃºvo(a)</option>
+          <option>UniÃ£o estÃ¡vel</option>
         </select>
       </div>
     </div>
     <div class="frow">
-      <div class="fg"><label class="fl2">Profissão</label><input class="fi2" id="np-profissao" placeholder="Ex: professor, engenheiro..."/></div>
+      <div class="fg"><label class="fl2">ProfissÃ£o</label><input class="fi2" id="np-profissao" placeholder="Ex: professor, engenheiro..."/></div>
       <div class="fg">
-        <label class="fl2">Ocupação principal</label>
+        <label class="fl2">OcupaÃ§Ã£o principal</label>
         <select class="fi2" id="np-ocupacao">
           <option value="">Selecionar</option>
-          <option>Sedentário</option>
-          <option>Em pé</option>
-          <option>Esforço físico</option>
+          <option>SedentÃ¡rio</option>
+          <option>Em pÃ©</option>
+          <option>EsforÃ§o fÃ­sico</option>
           <option>Home office</option>
         </select>
       </div>
@@ -406,14 +406,14 @@
       <div class="fg"><label class="fl2">E-mail</label><input class="fi2" id="np-email" type="email" placeholder="email@exemplo.com"/></div>
     </div>
 
-    <div style="font-size:10px;font-weight:700;color:var(--verde);text-transform:uppercase;letter-spacing:.06em;margin:14px 0 10px;padding:6px 10px;background:var(--verde-cl);border-radius:6px">📣 Como chegou ao consultório</div>
+    <div style="font-size:10px;font-weight:700;color:var(--verde);text-transform:uppercase;letter-spacing:.06em;margin:14px 0 10px;padding:6px 10px;background:var(--verde-cl);border-radius:6px">ðŸ“£ Como chegou ao consultÃ³rio</div>
     <div class="fg">
       <label class="fl2">Canal de chegada *</label>
       <select class="fi2" id="np-origem" onchange="toggleIndicacao()">
         <option value="Instagram">Instagram</option>
         <option value="Google">Google</option>
-        <option value="Indicação de paciente">Indicação de paciente</option>
-        <option value="Indicação médica">Indicação médica</option>
+        <option value="IndicaÃ§Ã£o de paciente">IndicaÃ§Ã£o de paciente</option>
+        <option value="IndicaÃ§Ã£o mÃ©dica">IndicaÃ§Ã£o mÃ©dica</option>
         <option value="Outros">Outros</option>
       </select>
     </div>
@@ -422,22 +422,22 @@
       <select class="fi2" id="np-indicador">
         <option value="">Selecionar paciente que indicou...</option>
       </select>
-      <div style="font-size:10px;color:var(--verde);margin-top:4px">✓ Desconto aplicado — valor avulso muda para R$185</div>
+      <div style="font-size:10px;color:var(--verde);margin-top:4px">âœ“ Desconto aplicado â€” valor avulso muda para R$185</div>
     </div>
 
-    <div style="font-size:10px;font-weight:700;color:#534AB7;text-transform:uppercase;letter-spacing:.06em;margin:14px 0 10px;padding:6px 10px;background:#EEEDFE;border-radius:6px">💰 Financeiro</div>
+    <div style="font-size:10px;font-weight:700;color:#534AB7;text-transform:uppercase;letter-spacing:.06em;margin:14px 0 10px;padding:6px 10px;background:#EEEDFE;border-radius:6px">ðŸ’° Financeiro</div>
     <div class="frow">
       <div class="fg">
         <label class="fl2">Tipo de atendimento *</label>
         <select class="fi2" id="np-tipo" onchange="atualizarValor()">
-          <option value="avulso">Avulso — R$ 200</option>
-          <option value="indicacao">Avulso indicação — R$ 185</option>
-          <option value="plano_avista">Plano à vista — R$ 165/sessão</option>
-          <option value="plano_prazo">Plano a prazo — R$ 185/sessão</option>
-          <option value="especial">Condição especial</option>
+          <option value="avulso">Avulso â€” R$ 200</option>
+          <option value="indicacao">Avulso indicaÃ§Ã£o â€” R$ 185</option>
+          <option value="plano_avista">Plano Ã  vista â€” R$ 165/sessÃ£o</option>
+          <option value="plano_prazo">Plano a prazo â€” R$ 185/sessÃ£o</option>
+          <option value="especial">CondiÃ§Ã£o especial</option>
         </select>
       </div>
-      <div class="fg"><label class="fl2">Valor/sessão (R$) *</label><input class="fi2" id="np-valor" type="number" placeholder="165"/></div>
+      <div class="fg"><label class="fl2">Valor/sessÃ£o (R$) *</label><input class="fi2" id="np-valor" type="number" placeholder="165"/></div>
     </div>
     <div class="frow">
       <div class="fg">
@@ -445,39 +445,39 @@
         <select class="fi2" id="np-pagamento">
           <option>PIX</option>
           <option>Dinheiro</option>
-          <option>Cartão débito</option>
-          <option>Cartão crédito</option>
+          <option>CartÃ£o dÃ©bito</option>
+          <option>CartÃ£o crÃ©dito</option>
         </select>
       </div>
-      <div class="fg"><label class="fl2">Convênio</label><input class="fi2" id="np-convenio" placeholder="Particular (padrão)"/></div>
+      <div class="fg"><label class="fl2">ConvÃªnio</label><input class="fi2" id="np-convenio" placeholder="Particular (padrÃ£o)"/></div>
     </div>
 
-    <div style="font-size:10px;font-weight:700;color:#791F1F;text-transform:uppercase;letter-spacing:.06em;margin:14px 0 10px;padding:6px 10px;background:#fdeaea;border-radius:6px">🩺 Dados clínicos iniciais</div>
+    <div style="font-size:10px;font-weight:700;color:#791F1F;text-transform:uppercase;letter-spacing:.06em;margin:14px 0 10px;padding:6px 10px;background:#fdeaea;border-radius:6px">ðŸ©º Dados clÃ­nicos iniciais</div>
     <div class="fg">
       <label class="fl2">Especialidade *</label>
       <select class="fi2" id="np-esp">
         <option>Terapia Manual</option>
         <option>Osteopatia</option>
         <option>Fisioterapia</option>
-        <option>Avaliação Inicial</option>
+        <option>AvaliaÃ§Ã£o Inicial</option>
       </select>
     </div>
-    <div class="fg"><label class="fl2">Queixa principal</label><input class="fi2" id="np-queixa" placeholder="Ex: lombalgia, cervicalgia, pós-op..."/></div>
-    <div class="fg"><label class="fl2">Médico que encaminhou</label><input class="fi2" id="np-medico" placeholder="Nome do médico ou especialista"/></div>
-    <div class="fg"><label class="fl2">Observações iniciais</label><textarea class="fi2" id="np-obs" rows="2" placeholder="Informações relevantes para o primeiro atendimento..." style="resize:none"></textarea></div>
+    <div class="fg"><label class="fl2">Queixa principal</label><input class="fi2" id="np-queixa" placeholder="Ex: lombalgia, cervicalgia, pÃ³s-op..."/></div>
+    <div class="fg"><label class="fl2">MÃ©dico que encaminhou</label><input class="fi2" id="np-medico" placeholder="Nome do mÃ©dico ou especialista"/></div>
+    <div class="fg"><label class="fl2">ObservaÃ§Ãµes iniciais</label><textarea class="fi2" id="np-obs" rows="2" placeholder="InformaÃ§Ãµes relevantes para o primeiro atendimento..." style="resize:none"></textarea></div>
 
     <button class="btn pr" style="width:100%;padding:13px;font-size:13px;border-radius:var(--r-sm);margin-top:8px" onclick="salvarPaciente()">Cadastrar paciente</button>
   </div>
 </div>
 
 <script>
-// ── SUPABASE CONFIG ─────────────────────────────────────────────────
+// â”€â”€ SUPABASE CONFIG â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const SUPA_URL  = 'https://bghauslchqikttuvjyza.supabase.co';
 const SUPA_KEY  = 'sb_publishable_ElqEE9xQgKzBgyv3rTHwOA_3hJm9Bf0';
 const { createClient } = supabase;
 const db = createClient(SUPA_URL, SUPA_KEY);
 
-// ── ESTADO ──────────────────────────────────────────────────────────
+// â”€â”€ ESTADO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 let usuario = null;
 let pacientes = [];
 let sessoes = [];
@@ -485,8 +485,8 @@ let diaAtivo = new Date();
 let painelAberto = null;
 let fichaAberta = null;
 
-// ── HELPERS ─────────────────────────────────────────────────────────
-const DIAS = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+// â”€â”€ HELPERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+const DIAS = ['Dom','Seg','Ter','Qua','Qui','Sex','SÃ¡b'];
 const MESES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
 
 function fmtData(d) {
@@ -518,7 +518,7 @@ function toast(msg) {
   toastTimer = setTimeout(() => t.classList.remove('vis'), 2500);
 }
 
-// ── AUTH ─────────────────────────────────────────────────────────────
+// â”€â”€ AUTH â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 async function fazerLogin() {
   const email = document.getElementById('login-email').value.trim();
   const senha = document.getElementById('login-senha').value;
@@ -534,11 +534,11 @@ async function fazerLogin() {
 async function mostrarCadastro() {
   const email = prompt('Seu e-mail para criar a conta:');
   if (!email) return;
-  const senha = prompt('Crie uma senha (mínimo 6 caracteres):');
+  const senha = prompt('Crie uma senha (mÃ­nimo 6 caracteres):');
   if (!senha || senha.length < 6) { alert('Senha muito curta.'); return; }
   const { error } = await db.auth.signUp({ email, password: senha });
   if (error) { alert('Erro: ' + error.message); return; }
-  alert('Conta criada! Agora faça login com seu e-mail e senha.');
+  alert('Conta criada! Agora faÃ§a login com seu e-mail e senha.');
 }
 
 async function verificarSessao() {
@@ -558,11 +558,11 @@ document.getElementById('avatar-btn').addEventListener('click', async () => {
   }
 });
 
-// ── INIT APP ─────────────────────────────────────────────────────────
+// â”€â”€ INIT APP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 async function iniciarApp() {
   document.getElementById('login-screen').style.display = 'none';
   document.getElementById('app').style.display = 'block';
-  document.getElementById('saud-data').textContent = saudacao() + ' · ' + fmtData(new Date());
+  document.getElementById('saud-data').textContent = saudacao() + ' Â· ' + fmtData(new Date());
   await Promise.all([carregarPacientes(), carregarSessoes()]);
   renderSemana();
   renderAgenda();
@@ -571,7 +571,7 @@ async function iniciarApp() {
   renderMensagens();
 }
 
-// ── PACIENTES ─────────────────────────────────────────────────────────
+// â”€â”€ PACIENTES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 async function carregarPacientes() {
   const { data, error } = await db.from('pacientes').select('*').order('nome');
   if (!error && data) {
@@ -595,7 +595,7 @@ function renderPacientes(filtro = '') {
     (p.apelido || '').toLowerCase().includes(f)
   );
   if (!itens.length) {
-    lista.innerHTML = `<div class="empty"><div class="empty-icon">👤</div>Nenhum paciente encontrado<br><br>
+    lista.innerHTML = `<div class="empty"><div class="empty-icon">ðŸ‘¤</div>Nenhum paciente encontrado<br><br>
       <button class="btn pr" onclick="abrirFormPac()">+ Cadastrar paciente</button></div>`;
     return;
   }
@@ -608,34 +608,34 @@ function renderPacientes(filtro = '') {
         <div class="pac-av" style="background:${cor.bg};color:${cor.text}">${ini}</div>
         <div style="flex:1">
           <div class="pac-nome">${p.nome}${apelido}</div>
-          <div class="pac-meta">${p.especialidade || '—'} · ${p.queixa || '—'}</div>
+          <div class="pac-meta">${p.especialidade || 'â€”'} Â· ${p.queixa || 'â€”'}</div>
         </div>
         <div class="pac-val">R$${p.valor_sessao || 165}</div>
       </div>
       <div class="ficha" id="ficha-${p.id}">
         <div class="f-grid">
-          <div class="f-item"><div class="f-lbl">Como é chamado</div><div class="f-val">${p.apelido || p.nome.split(' ')[0]}</div></div>
-          <div class="f-item"><div class="f-lbl">WhatsApp</div><div class="f-val">${p.whatsapp || '—'}</div></div>
-          <div class="f-item"><div class="f-lbl">Valor/sessão</div><div class="f-val" style="color:var(--verde)">R$ ${p.valor_sessao || 165}</div></div>
-          <div class="f-item"><div class="f-lbl">Especialidade</div><div class="f-val">${p.especialidade || '—'}</div></div>
+          <div class="f-item"><div class="f-lbl">Como Ã© chamado</div><div class="f-val">${p.apelido || p.nome.split(' ')[0]}</div></div>
+          <div class="f-item"><div class="f-lbl">WhatsApp</div><div class="f-val">${p.whatsapp || 'â€”'}</div></div>
+          <div class="f-item"><div class="f-lbl">Valor/sessÃ£o</div><div class="f-val" style="color:var(--verde)">R$ ${p.valor_sessao || 165}</div></div>
+          <div class="f-item"><div class="f-lbl">Especialidade</div><div class="f-val">${p.especialidade || 'â€”'}</div></div>
         </div>
         <div style="font-size:11px;font-weight:600;color:var(--texto3);margin-bottom:5px">Queixa principal</div>
-        <div class="evo-txt" style="margin-bottom:10px">${p.queixa || 'Não registrada'}</div>
-        <div style="font-size:11px;font-weight:600;color:var(--texto3);margin-bottom:5px">Anotação de evolução</div>
-        <div class="evo-txt" id="evo-${p.id}">${p.evolucao || 'Nenhuma anotação ainda.'}</div>
-        <textarea class="evo-add" id="txt-${p.id}" rows="2" placeholder="Adicionar anotação..." onclick="event.stopPropagation()"></textarea>
+        <div class="evo-txt" style="margin-bottom:10px">${p.queixa || 'NÃ£o registrada'}</div>
+        <div style="font-size:11px;font-weight:600;color:var(--texto3);margin-bottom:5px">AnotaÃ§Ã£o de evoluÃ§Ã£o</div>
+        <div class="evo-txt" id="evo-${p.id}">${p.evolucao || 'Nenhuma anotaÃ§Ã£o ainda.'}</div>
+        <textarea class="evo-add" id="txt-${p.id}" rows="2" placeholder="Adicionar anotaÃ§Ã£o..." onclick="event.stopPropagation()"></textarea>
         <div class="btn-row" style="margin-top:8px">
-          <button class="btn vd" onclick="salvarEvo(event,${p.id})">Salvar anotação</button>
+          <button class="btn vd" onclick="salvarEvo(event,${p.id})">Salvar anotaÃ§Ã£o</button>
           <button class="btn pr" onclick="gerarMsgPac(event,${p.id},'${p.apelido || p.nome.split(' ')[0]}')">Gerar msg WA</button>
-          <button class="btn" onclick="editarPaciente(event,'${p.id}')" style="border-color:var(--azul);color:var(--azul)">✏️ Editar</button>
-          <button class="btn vm" onclick="deletarPaciente(event,'${p.id}','${p.nome}')">🗑️ Excluir</button>
+          <button class="btn" onclick="editarPaciente(event,'${p.id}')" style="border-color:var(--azul);color:var(--azul)">âœï¸ Editar</button>
+          <button class="btn vm" onclick="deletarPaciente(event,'${p.id}','${p.nome}')">ðŸ—‘ï¸ Excluir</button>
         </div>
         <div class="msg-box" id="msgpac-${p.id}">
           <div class="msg-top">
-            <span class="msg-lbl">Pós-sessão</span>
+            <span class="msg-lbl">PÃ³s-sessÃ£o</span>
             <span class="msg-copy" onclick="copiarMsg('msgpac-${p.id}')">Copiar</span>
           </div>
-          <div class="msg-txt">${saudacao()}, ${p.apelido || p.nome.split(' ')[0]}!\nComo você está se sentindo após o seu atendimento de ontem?\nQualquer dúvida, estou à disposição!\nDr. Jadismar</div>
+          <div class="msg-txt">${saudacao()}, ${p.apelido || p.nome.split(' ')[0]}!\nComo vocÃª estÃ¡ se sentindo apÃ³s o seu atendimento de ontem?\nQualquer dÃºvida, estou Ã  disposiÃ§Ã£o!\nDr. Jadismar</div>
           <div class="msg-hint">Copie e envie pelo WhatsApp</div>
         </div>
       </div>
@@ -666,7 +666,7 @@ async function salvarEvo(e, id) {
   e.stopPropagation();
   const txt = document.getElementById('txt-' + id);
   const evoEl = document.getElementById('evo-' + id);
-  if (!txt.value.trim()) { toast('Escreva uma anotação'); return; }
+  if (!txt.value.trim()) { toast('Escreva uma anotaÃ§Ã£o'); return; }
   const d = new Date();
   const dataStr = `${d.getDate().toString().padStart(2,'0')}/${(d.getMonth()+1).toString().padStart(2,'0')}/${d.getFullYear()}`;
   const pac = pacientes.find(p => p.id === id);
@@ -676,7 +676,7 @@ async function salvarEvo(e, id) {
   pac.evolucao = novaEvo;
   evoEl.innerHTML = novaEvo.replace(/\n/g, '<br>');
   txt.value = '';
-  toast('Anotação salva!');
+  toast('AnotaÃ§Ã£o salva!');
 }
 
 function gerarMsgPac(e, id, apelido) {
@@ -685,7 +685,7 @@ function gerarMsgPac(e, id, apelido) {
   if (box) box.classList.toggle('vis');
 }
 
-// ── FORM PACIENTE ─────────────────────────────────────────────────────
+// â”€â”€ FORM PACIENTE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function atualizarValor() {
   const valores = { avulso: 200, indicacao: 185, plano_avista: 165, plano_prazo: 185, especial: '' };
   const tipo = document.getElementById('np-tipo').value;
@@ -696,13 +696,13 @@ function toggleIndicacao() {
   const origem = document.getElementById('np-origem').value;
   const campo = document.getElementById('campo-indicador');
   const tipoSelect = document.getElementById('np-tipo');
-  if (origem === 'Indicação de paciente') {
+  if (origem === 'IndicaÃ§Ã£o de paciente') {
     campo.style.display = 'block';
     // Popula lista de pacientes indicadores
     const sel = document.getElementById('np-indicador');
     sel.innerHTML = '<option value="">Selecionar paciente que indicou...</option>' +
       pacientes.map(p => `<option value="${p.id}">${p.nome}${p.apelido ? ' (' + p.apelido + ')' : ''}</option>`).join('');
-    // Muda tipo para indicação automaticamente
+    // Muda tipo para indicaÃ§Ã£o automaticamente
     tipoSelect.value = 'indicacao';
     atualizarValor();
   } else {
@@ -715,7 +715,7 @@ function toggleIndicacao() {
 }
 
 function abrirFormPac() {
-  // Limpa o formulário
+  // Limpa o formulÃ¡rio
   ['np-nome','np-apelido','np-wa','np-cpf','np-email','np-profissao','np-queixa','np-medico','np-obs','np-convenio'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = '';
@@ -756,7 +756,7 @@ async function salvarPaciente() {
   const tipo = document.getElementById('np-tipo').value;
 
   if (!nome) { toast('Informe o nome do paciente'); return; }
-  if (origem === 'Indicação de paciente' && !indicadorId) {
+  if (origem === 'IndicaÃ§Ã£o de paciente' && !indicadorId) {
     toast('Selecione o paciente que indicou'); return;
   }
 
@@ -772,14 +772,14 @@ async function salvarPaciente() {
 
   if (error) { toast('Erro ao cadastrar: ' + error.message); return; }
 
-  // Se foi indicação, registra na ficha do indicador
+  // Se foi indicaÃ§Ã£o, registra na ficha do indicador
   if (indicadorId && data) {
     const indicador = pacientes.find(p => p.id === indicadorId);
     if (indicador) {
       const novaObs = (indicador.observacoes || '') +
         (indicador.observacoes ? '
 ' : '') +
-        `[Indicação] Indicou ${nome} em ${new Date().toLocaleDateString('pt-BR')}`;
+        `[IndicaÃ§Ã£o] Indicou ${nome} em ${new Date().toLocaleDateString('pt-BR')}`;
       await db.from('pacientes').update({ observacoes: novaObs }).eq('id', indicadorId);
       indicador.observacoes = novaObs;
     }
@@ -791,12 +791,12 @@ async function salvarPaciente() {
   fecharFormPac();
   renderPacientes();
   const msg = indicadorId
-    ? `${nome} cadastrado! Indicação de ${pacientes.find(p=>p.id===indicadorId)?.nome} registrada ✓`
+    ? `${nome} cadastrado! IndicaÃ§Ã£o de ${pacientes.find(p=>p.id===indicadorId)?.nome} registrada âœ“`
     : `${nome} cadastrado!`;
   toast(msg);
 }
 
-// ── SESSÕES ───────────────────────────────────────────────────────────
+// â”€â”€ SESSÃ•ES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 async function carregarSessoes() {
   const inicio = new Date();
   inicio.setDate(inicio.getDate() - 7);
@@ -846,11 +846,11 @@ function selecionarDia(ts, el) {
 function renderAgenda() {
   const corpo = document.getElementById('agenda-corpo');
   const sessDia = sessoesDodia(diaAtivo);
-  document.getElementById('saud-data').textContent = saudacao() + ' · ' + fmtData(diaAtivo);
+  document.getElementById('saud-data').textContent = saudacao() + ' Â· ' + fmtData(diaAtivo);
 
   if (!sessDia.length) {
-    corpo.innerHTML = `<div class="empty"><div class="empty-icon">📅</div>Nenhuma sessão neste dia<br><br>
-      <button class="btn pr" onclick="abrirFormSessao()">+ Agendar sessão</button></div>`;
+    corpo.innerHTML = `<div class="empty"><div class="empty-icon">ðŸ“…</div>Nenhuma sessÃ£o neste dia<br><br>
+      <button class="btn pr" onclick="abrirFormSessao()">+ Agendar sessÃ£o</button></div>`;
     return;
   }
 
@@ -864,27 +864,27 @@ function renderAgenda() {
   let html = '';
   if (grupos.ativa.length) { html += '<div class="sec-label">Em atendimento</div>'; grupos.ativa.forEach(s => html += cardSessao(s)); }
   if (grupos.confirmada.length) { html += '<div class="sec-label">Confirmados</div>'; grupos.confirmada.forEach(s => html += cardSessao(s)); }
-  if (grupos.pendente.length) { html += '<div class="sec-label">Aguardando confirmação</div>'; grupos.pendente.forEach(s => html += cardSessao(s)); }
+  if (grupos.pendente.length) { html += '<div class="sec-label">Aguardando confirmaÃ§Ã£o</div>'; grupos.pendente.forEach(s => html += cardSessao(s)); }
   if (grupos.cancelada.length) { html += '<div class="sec-label">Cancelados</div>'; grupos.cancelada.forEach(s => html += cardSessao(s)); }
   corpo.innerHTML = html;
 }
 
 function cardSessao(s) {
   const pac = pacientes.find(p => p.id === s.paciente_id);
-  const nomePac = pac ? (pac.apelido || pac.nome) : (s.nome_paciente || '—');
+  const nomePac = pac ? (pac.apelido || pac.nome) : (s.nome_paciente || 'â€”');
   const badge = { confirmada:'<span class="s-badge bc">Confirmado</span>', ativa:'<span class="s-badge ba">Em curso</span>', pendente:'<span class="s-badge bp">Sem resposta</span>', cancelada:'<span class="s-badge bx">Cancelado</span>' }[s.status] || '';
   const riscado = s.status === 'cancelada' ? 'style="text-decoration:line-through"' : '';
   const wa = pac?.whatsapp || '';
-  const hora = s.hora ? s.hora.substring(0,5) : '—';
+  const hora = s.hora ? s.hora.substring(0,5) : 'â€”';
 
   const msgLembrete = s.status === 'pendente'
-    ? `${saudacao()}, ${nomePac}, tudo bem?\nEu gostaria de confirmar seu atendimento amanhã, às ${hora}.\nDr. Jadismar`
-    : `${saudacao()}, ${nomePac}!\nComo você está se sentindo após o seu atendimento de ontem?\nQualquer dúvida, estou à disposição!\nDr. Jadismar`;
+    ? `${saudacao()}, ${nomePac}, tudo bem?\nEu gostaria de confirmar seu atendimento amanhÃ£, Ã s ${hora}.\nDr. Jadismar`
+    : `${saudacao()}, ${nomePac}!\nComo vocÃª estÃ¡ se sentindo apÃ³s o seu atendimento de ontem?\nQualquer dÃºvida, estou Ã  disposiÃ§Ã£o!\nDr. Jadismar`;
 
   const btnConf = s.status === 'pendente'
-    ? `<button class="btn vd" onclick="confirmar(event,'${s.id}')">✓ Confirmar</button>` : '';
+    ? `<button class="btn vd" onclick="confirmar(event,'${s.id}')">âœ“ Confirmar</button>` : '';
   const btnCanc = s.status !== 'cancelada'
-    ? `<button class="btn vm" onclick="cancelar(event,'${s.id}','${nomePac}')">✕ Cancelar</button>` : '';
+    ? `<button class="btn vm" onclick="cancelar(event,'${s.id}','${nomePac}')">âœ• Cancelar</button>` : '';
 
   return `<div class="sessao ${s.status}" id="card-${s.id}" onclick="togglePainel('${s.id}')">
     <div class="s-row">
@@ -893,16 +893,16 @@ function cardSessao(s) {
       ${badge}
     </div>
     <div class="s-tags">
-      <span class="s-tag">${s.especialidade || '—'}</span>
+      <span class="s-tag">${s.especialidade || 'â€”'}</span>
       <span class="s-tag">50 min</span>
-      <span class="s-tag">R$ ${s.valor || '—'}</span>
+      <span class="s-tag">R$ ${s.valor || 'â€”'}</span>
     </div>
     <div class="painel" id="pan-${s.id}">
       <div class="p-grid">
         <div class="p-item"><div class="p-lbl">Paciente</div><div class="p-val">${pac?.nome || nomePac}</div></div>
-        <div class="p-item"><div class="p-lbl">Valor</div><div class="p-val">R$ ${s.valor || '—'}</div></div>
+        <div class="p-item"><div class="p-lbl">Valor</div><div class="p-val">R$ ${s.valor || 'â€”'}</div></div>
         <div class="p-item"><div class="p-lbl">Especialidade</div><div class="p-val">${s.especialidade}</div></div>
-        <div class="p-item"><div class="p-lbl">Horário</div><div class="p-val">${hora}</div></div>
+        <div class="p-item"><div class="p-lbl">HorÃ¡rio</div><div class="p-val">${hora}</div></div>
       </div>
       <div class="btn-row">
         ${btnConf}
@@ -955,12 +955,12 @@ async function confirmar(e, id) {
   renderAgenda();
   renderMetricas();
   renderFinanceiro();
-  toast('Sessão confirmada!');
+  toast('SessÃ£o confirmada!');
 }
 
 async function cancelar(e, id, nome) {
   e.stopPropagation();
-  if (!confirm(`Cancelar sessão de ${nome}?`)) return;
+  if (!confirm(`Cancelar sessÃ£o de ${nome}?`)) return;
   const { error } = await db.from('sessoes').update({ status: 'cancelada' }).eq('id', id);
   if (error) { toast('Erro ao cancelar'); return; }
   const s = sessoes.find(s => s.id === id);
@@ -982,7 +982,7 @@ function renderMetricas() {
   document.getElementById('m-pendentes').textContent = pendentes;
 }
 
-// ── FINANCEIRO ────────────────────────────────────────────────────────
+// â”€â”€ FINANCEIRO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function renderFinanceiro() {
   const hoje = new Date();
   const mesAtual = hoje.getMonth();
@@ -1015,25 +1015,25 @@ function renderFinanceiro() {
   const sessDia = sessoesDodia(diaAtivo);
   const lista = document.getElementById('fin-lista');
   if (!sessDia.length) {
-    lista.innerHTML = '<div style="padding:16px;text-align:center;color:var(--texto3);font-size:12px">Nenhuma sessão neste dia</div>';
+    lista.innerHTML = '<div style="padding:16px;text-align:center;color:var(--texto3);font-size:12px">Nenhuma sessÃ£o neste dia</div>';
     return;
   }
   lista.innerHTML = sessDia.map(s => {
     const pac = pacientes.find(p => p.id === s.paciente_id);
-    const nome = pac ? (pac.apelido || pac.nome.split(' ')[0]) : (s.nome_paciente || '—');
+    const nome = pac ? (pac.apelido || pac.nome.split(' ')[0]) : (s.nome_paciente || 'â€”');
     const clr = { confirmada:'var(--verde)', ativa:'var(--azul)', pendente:'var(--amber)', cancelada:'var(--vermelho)' }[s.status];
     const bgSt = { confirmada:'var(--verde-cl)', ativa:'var(--azul-cl)', pendente:'var(--amber-cl)', cancelada:'var(--vermelho-cl)' }[s.status];
     const lbl = { confirmada:'PIX/Dinheiro', ativa:'Em curso', pendente:'Pendente', cancelada:'Cancelado' }[s.status];
-    const prefix = s.status === 'cancelada' ? '−' : '';
+    const prefix = s.status === 'cancelada' ? 'âˆ’' : '';
     return `<div class="fin-row">
       <span class="fin-nome">${nome}</span>
-      <span class="fin-v" style="color:${clr}">${prefix}R$${s.valor || '—'}</span>
+      <span class="fin-v" style="color:${clr}">${prefix}R$${s.valor || 'â€”'}</span>
       <span class="fin-st" style="background:${bgSt};color:${clr}">${lbl}</span>
     </div>`;
   }).join('');
 }
 
-// ── MENSAGENS ────────────────────────────────────────────────────────
+// â”€â”€ MENSAGENS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function renderMensagens() {
   const lista = document.getElementById('msgs-lista');
   const amanha = new Date();
@@ -1041,16 +1041,16 @@ function renderMensagens() {
   const sessAmanha = sessoesDodia(amanha).filter(s => s.status !== 'cancelada');
 
   if (!sessAmanha.length) {
-    lista.innerHTML = `<div class="empty"><div class="empty-icon">💬</div>Nenhuma mensagem pendente para amanhã</div>`;
+    lista.innerHTML = `<div class="empty"><div class="empty-icon">ðŸ’¬</div>Nenhuma mensagem pendente para amanhÃ£</div>`;
     return;
   }
 
   lista.innerHTML = sessAmanha.map(s => {
     const pac = pacientes.find(p => p.id === s.paciente_id);
-    const nome = pac ? (pac.apelido || pac.nome.split(' ')[0]) : (s.nome_paciente || '—');
-    const hora = s.hora ? s.hora.substring(0,5) : '—';
+    const nome = pac ? (pac.apelido || pac.nome.split(' ')[0]) : (s.nome_paciente || 'â€”');
+    const hora = s.hora ? s.hora.substring(0,5) : 'â€”';
     const trat = pac?.nome?.startsWith('Sr.') || pac?.nome?.startsWith('Dr.') ? '' : '';
-    const msg = `${saudacao()}, ${nome}, tudo bem?\nEu gostaria de confirmar seu atendimento amanhã, às ${hora}.\nDr. Jadismar`;
+    const msg = `${saudacao()}, ${nome}, tudo bem?\nEu gostaria de confirmar seu atendimento amanhÃ£, Ã s ${hora}.\nDr. Jadismar`;
     const mid = 'msg-lembrete-' + s.id;
     return `<div class="sessao ${s.status}" style="margin-bottom:10px">
       <div class="s-row">
@@ -1058,7 +1058,7 @@ function renderMensagens() {
         <span class="s-nome">${nome}</span>
         <span class="s-badge ${s.status==='confirmada'?'bc':'bp'}">${s.status==='confirmada'?'Confirmado':'A confirmar'}</span>
       </div>
-      <div class="s-tags"><span class="s-tag">${s.especialidade}</span><span class="s-tag">Amanhã</span></div>
+      <div class="s-tags"><span class="s-tag">${s.especialidade}</span><span class="s-tag">AmanhÃ£</span></div>
       <div style="margin-top:8px">
         <button class="btn pr" onclick="toggleMsgLembrete('${mid}')">Gerar lembrete WA</button>
       </div>
@@ -1079,7 +1079,7 @@ function toggleMsgLembrete(id) {
   if (box) box.classList.toggle('vis');
 }
 
-// ── EDITAR / DELETAR PACIENTE ────────────────────────────────────────
+// â”€â”€ EDITAR / DELETAR PACIENTE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function editarPaciente(e, id) {
   e.stopPropagation();
   const p = pacientes.find(p => p.id === id);
@@ -1094,10 +1094,10 @@ function editarPaciente(e, id) {
   modal.className = 'overlay open';
   modal.innerHTML = `
     <div class="sheet">
-      <div class="sheet-title">Editar paciente <span class="sh-close" onclick="fecharModalEditar()">×</span></div>
+      <div class="sheet-title">Editar paciente <span class="sh-close" onclick="fecharModalEditar()">Ã—</span></div>
       <div class="fg"><label class="fl2">Nome completo</label><input class="fi2" id="ep-nome" value="${p.nome || ''}"/></div>
       <div class="frow">
-        <div class="fg"><label class="fl2">Como é chamado</label><input class="fi2" id="ep-apelido" value="${p.apelido || ''}"/></div>
+        <div class="fg"><label class="fl2">Como Ã© chamado</label><input class="fi2" id="ep-apelido" value="${p.apelido || ''}"/></div>
         <div class="fg"><label class="fl2">WhatsApp</label><input class="fi2" id="ep-wa" value="${p.whatsapp || ''}"/></div>
       </div>
       <div class="frow">
@@ -1107,26 +1107,26 @@ function editarPaciente(e, id) {
             <option ${p.especialidade==='Terapia Manual'?'selected':''}>Terapia Manual</option>
             <option ${p.especialidade==='Osteopatia'?'selected':''}>Osteopatia</option>
             <option ${p.especialidade==='Fisioterapia'?'selected':''}>Fisioterapia</option>
-            <option ${p.especialidade==='Avaliação Inicial'?'selected':''}>Avaliação Inicial</option>
+            <option ${p.especialidade==='AvaliaÃ§Ã£o Inicial'?'selected':''}>AvaliaÃ§Ã£o Inicial</option>
           </select>
         </div>
-        <div class="fg"><label class="fl2">Valor/sessão (R$)</label><input class="fi2" id="ep-valor" type="number" value="${p.valor_sessao || 165}"/></div>
+        <div class="fg"><label class="fl2">Valor/sessÃ£o (R$)</label><input class="fi2" id="ep-valor" type="number" value="${p.valor_sessao || 165}"/></div>
       </div>
       <div class="fg"><label class="fl2">Queixa principal</label><input class="fi2" id="ep-queixa" value="${p.queixa || ''}"/></div>
       <div class="frow">
         <div class="fg">
           <label class="fl2">Como chegou</label>
           <select class="fi2" id="ep-origem">
-            <option ${p.como_chegou==='Indicação de paciente'?'selected':''}>Indicação de paciente</option>
+            <option ${p.como_chegou==='IndicaÃ§Ã£o de paciente'?'selected':''}>IndicaÃ§Ã£o de paciente</option>
             <option ${p.como_chegou==='Instagram'?'selected':''}>Instagram</option>
             <option ${p.como_chegou==='Google'?'selected':''}>Google</option>
-            <option ${p.como_chegou==='Indicação médica'?'selected':''}>Indicação médica</option>
+            <option ${p.como_chegou==='IndicaÃ§Ã£o mÃ©dica'?'selected':''}>IndicaÃ§Ã£o mÃ©dica</option>
             <option ${p.como_chegou==='Outros'?'selected':''}>Outros</option>
           </select>
         </div>
         <div class="fg"><label class="fl2">Data de nascimento</label><input class="fi2" id="ep-nasc" type="date" value="${p.data_nascimento || ''}"/></div>
       </div>
-      <button class="btn pr" style="width:100%;padding:12px;font-size:13px;border-radius:var(--r-sm)" onclick="salvarEdicao('${id}')">Salvar alterações</button>
+      <button class="btn pr" style="width:100%;padding:12px;font-size:13px;border-radius:var(--r-sm)" onclick="salvarEdicao('${id}')">Salvar alteraÃ§Ãµes</button>
     </div>`;
   document.body.appendChild(modal);
 }
@@ -1166,16 +1166,16 @@ async function salvarEdicao(id) {
 
 async function deletarPaciente(e, id, nome) {
   e.stopPropagation();
-  if (!confirm(`Excluir o paciente "${nome}"? Esta ação não pode ser desfeita.`)) return;
+  if (!confirm(`Excluir o paciente "${nome}"? Esta aÃ§Ã£o nÃ£o pode ser desfeita.`)) return;
   const { error } = await db.from('pacientes').delete().eq('id', id);
   if (error) { toast('Erro ao excluir: ' + error.message); return; }
   pacientes = pacientes.filter(p => p.id !== id);
   atualizarDatalist();
   renderPacientes();
-  toast(nome + ' excluído.');
+  toast(nome + ' excluÃ­do.');
 }
 
-// ── FORM NOVA SESSÃO ──────────────────────────────────────────────────
+// â”€â”€ FORM NOVA SESSÃƒO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function abrirFormSessao() {
   document.getElementById('overlay-sessao').classList.add('open');
   document.getElementById('f-data').value = fmtDataISO(diaAtivo);
@@ -1191,7 +1191,7 @@ async function salvarSessao() {
   const tipo = document.getElementById('f-tipo').value;
   const valor = parseInt(document.getElementById('f-valor').value) || 165;
   const obs = document.getElementById('f-obs').value.trim();
-  if (!nomePac || !data || !hora) { toast('Preencha paciente, data e horário'); return; }
+  if (!nomePac || !data || !hora) { toast('Preencha paciente, data e horÃ¡rio'); return; }
 
   const pac = pacientes.find(p =>
     (p.nome || '').toLowerCase() === nomePac.toLowerCase() ||
@@ -1218,10 +1218,10 @@ async function salvarSessao() {
   renderMetricas();
   renderFinanceiro();
   renderMensagens();
-  toast('Sessão de ' + (pac?.apelido || nomePac) + ' agendada!');
+  toast('SessÃ£o de ' + (pac?.apelido || nomePac) + ' agendada!');
 }
 
-// ── NAVEGAÇÃO ─────────────────────────────────────────────────────────
+// â”€â”€ NAVEGAÃ‡ÃƒO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function irPara(sec) {
   document.querySelectorAll('.sec').forEach(s => s.classList.remove('ativo'));
   document.querySelectorAll('.tab, .nb').forEach(b => b.classList.remove('ativo'));
@@ -1233,7 +1233,7 @@ function irPara(sec) {
   if (sec === 'mensagens') renderMensagens();
 }
 
-// ── START ─────────────────────────────────────────────────────────────
+// â”€â”€ START â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 verificarSessao();
 </script>
 </body>
